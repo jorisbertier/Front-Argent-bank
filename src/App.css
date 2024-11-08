@@ -15,6 +15,7 @@ body {
 
 .main {
   flex: 1;
+  max-height: 550px;
 }
 
 .bg-dark {
@@ -175,7 +176,7 @@ body {
 }
 
 .sign-in-icon {
-  font-size: 5rem;
+  font-size: 1rem;
 }
 
 .input-remember {

@@ -1,8 +1,9 @@
 import React from 'react'
+import '../index.css';
 
 function SignIn() {
     return (
-    <>
+    <body>
         <main className="main bg-dark">
             <section className="sign-in-content">
                 <i className="fa fa-user-circle sign-in-icon"></i>
@@ -19,16 +20,13 @@ function SignIn() {
                     <input type="checkbox" id="remember-me" />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
-                <a href="./user.html" className="sign-in-button">Sign In</a>
+                {/* <a href="./user.html" className="sign-in-button">Sign In</a> */}
                 <button className="sign-in-button">Sign In</button>
                 </form>
             </section>
         </main>
-        <footer className="footer">
-            <p className="footer-text">Copyright 2020 Argent Bank</p>
-        </footer>
-    </>
-  )
+    </body>
+    )
 }
 
 export default SignIn
