@@ -1,5 +1,6 @@
 import React from 'react'
 import '../index.css';
+import { Link } from 'react-router-dom';
 
 function SignIn() {
     return (
@@ -20,7 +21,7 @@ function SignIn() {
                     <input type="checkbox" id="remember-me" />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
-                {/* <a href="./user.html" className="sign-in-button">Sign In</a> */}
+                {/* <Link to="/user" className="sign-in-button">Sign In</Link> */}
                 <button className="sign-in-button">Sign In</button>
                 </form>
             </section>
