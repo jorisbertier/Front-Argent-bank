@@ -276,7 +276,9 @@ body {
   background-color: #00bc77;
   color: #fff;
 }
-
+.error-message {
+  color: red;
+}
 @media (min-width: 720px) {
   .account {
     flex-direction: row;

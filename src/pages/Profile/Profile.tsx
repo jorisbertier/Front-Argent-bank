@@ -1,8 +1,8 @@
 import React from 'react';
-import '../index.css';
-import '../App.css'
+import '../../index.css';
+import '../../App.css'
 
-function User() {
+function Profile() {
   return (
     <main>
     <main className="main bg-dark">
@@ -46,4 +46,4 @@ function User() {
   )
 }
 
-export default User
+export default Profile
