@@ -12,7 +12,6 @@ function SignIn() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    console.log(errorMessage)
     useEffect(() => {
         if (success) {
             navigate('/profile');

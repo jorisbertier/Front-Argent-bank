@@ -1,7 +1,7 @@
 import axios from 'axios';
 const API_BASE_URL = 'http://localhost:3001/api/v1/user';
 
-// Action pour l'inscription
+// Action for inscription
 export const signupUser = (userData) => async (dispatch) => {
     try {
         const response = await axios.post(`${API_BASE_URL}/signup`, userData);
@@ -11,7 +11,7 @@ export const signupUser = (userData) => async (dispatch) => {
     }
 };
 
-// Action pour la connexion
+// Action for connexion
 export const loginUser = (credentials) => async (dispatch) => {
         try {
         const response = await fetch("http://localhost:3001/api/v1/user/login", {
@@ -27,7 +27,6 @@ export const loginUser = (credentials) => async (dispatch) => {
             const token = data.body.token;
             dispatch({ type: 'LOGIN_SUCCESS', payload: { user: data.body.user, token } });
             
-            // Stockage du token dans le sessionStorage
             sessionStorage.setItem("token", token);
         } else {
             const errorData = await response.json();
@@ -37,9 +36,9 @@ export const loginUser = (credentials) => async (dispatch) => {
         dispatch({ type: 'LOGIN_ERROR', payload: error.message });
         console.error("Erreur lors de la connexion:", error);
         }
-  };
+};
 
-// Action pour récupérer le profil utilisateur
+// Action for get profil user
 export const fetchUserProfile = () => async (dispatch) => {
     try {
         const token = localStorage.getItem('token');
