@@ -24,8 +24,10 @@ export const loginUser = (credentials) => async (dispatch) => {
     
         if (response.ok) {
             const data = await response.json();
-            const token = data.body.token;
-            dispatch({ type: 'LOGIN_SUCCESS', payload: { user: data.body.user, token } });
+            const { token, user } = data.body;
+            
+            // Dispatch successful login with user data and token
+            dispatch({ type: 'LOGIN_SUCCESS', payload: { user, token } });
             
             sessionStorage.setItem("token", token);
         } else {

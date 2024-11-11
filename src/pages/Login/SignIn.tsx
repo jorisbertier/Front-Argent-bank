@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import '../../index.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../redux/userActions';
+import { loginUser } from '../../redux/actions/auth.actions';
 import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { success, errorMessage, loading } = useSelector((state) => state.user); 
+    const { success, errorMessage, loading } = useSelector((state) => state.auth); 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -24,7 +24,7 @@ function SignIn() {
     };
 
     return (
-    <body>
+    <>
         <main className="main bg-dark">
             <section className="sign-in-content">
                 <i className="fa fa-user-circle sign-in-icon"></i>
@@ -48,7 +48,7 @@ function SignIn() {
                 </form>
             </section>
         </main>
-    </body>
+    </>
     )
 }
 
