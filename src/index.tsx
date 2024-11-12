@@ -16,11 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Composant principal pour charger les informations utilisateur
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(loadUserFromStorage());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(loadUserFromStorage());
+  }, [dispatch]);
 
   return (
     <>

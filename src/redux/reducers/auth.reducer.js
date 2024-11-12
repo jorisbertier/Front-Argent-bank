@@ -30,8 +30,12 @@ export const authReducer = (state = initialState, action) => {
                     ...state,
                     token: null,
                     isConnected: false,
+                    auth: {}
                 }
         case 'SIGNUP_ERROR':
+            return {
+                ...state
+            }
         default:
             return state;
     }

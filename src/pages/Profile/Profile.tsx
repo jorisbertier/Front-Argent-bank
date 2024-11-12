@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../index.css';
 import '../../App.css'
 import { useSelector } from 'react-redux';
 import AccountCard from '../../components/AccountCard.tsx';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
+
+  const isConnected = useSelector((state) => state.auth.isConnected);
+  const navigate = useNavigate();
 
   const userData = useSelector((state) => state.user.userData);
   // const token = useSelector((state) => state.auth.token);
   let storage = localStorage.getItem("token");
-  console.log(storage)
+  console.log(userData)
+  console.log(typeof userData)
+  
+
+  // useEffect(() => {
+  //   if (isConnected === false) {
+  //     navigate('/signIn');
+  //   }
+  // }, [isConnected, navigate]);
   return (
       <main className="main bg-dark">
         <div className="header">
