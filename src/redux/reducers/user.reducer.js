@@ -1,33 +1,22 @@
-
-import { GET_USERPROFILE, EDIT_USERNAME, LOGOUT } from "../actions/type.actions"
-/* Initial user state */
 const initialState = {
     status: 'VOID',
     userData: {}
 }
 
-
-export const userReducer = (state = initialState, action ) => {
-    switch (action.type) {
-        case GET_USERPROFILE:
+export const userReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case 'FETCH_PROFILE_SUCCESS':
             return {
                 ...state,
-                status: 'SUCCEEDED',
-                userData: action.payload
-            }
-        case EDIT_USERNAME: 
+                userData: action.payload,
+                error: null,
+            };
+        case 'FETCH_PROFILE_ERROR':
             return {
                 ...state,
-                status: "MODIFIED",
-                userData: {
-                    ...state.userData,
-                    username: action.payload
-                } 
-            } 
-        case LOGOUT: {
-            return initialState;  
-        }   
+                error: action.payload,
+            };
         default:
-            return state;    
+            return state;
     }
 }

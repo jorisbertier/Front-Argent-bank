@@ -1,17 +1,22 @@
-import { GET_USERPROFILE, EDIT_USERNAME } from "./type.actions";
+export const fetchUserProfile = (token) => async (dispatch) => {
+    try {
+    const response = await fetch("http://localhost:3001/api/v1/user/profile", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+        },
+    });
 
-/* User data recovery action */
-export const userProfile = (userData) => {
-    return {
-        type: GET_USERPROFILE,
-        payload: userData,
+    if (response.ok) {
+        const data = await response.json();
+        dispatch({ type: 'FETCH_PROFILE_SUCCESS', payload: data.body });
+    } else {
+        const errorData = await response.json();
+        dispatch({ type: 'FETCH_PROFILE_ERROR', payload: errorData.message });
     }
-}
-
-/* Username update action */
-export const updateUsername = (username) => {
-    return {
-        type: EDIT_USERNAME,
-        payload: username,
+    } catch (error) {
+    dispatch({ type: 'FETCH_PROFILE_ERROR', payload: error.message });
+    console.error("Error during recuperation of profile:", error);
     }
-}
+};
