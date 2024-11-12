@@ -20,12 +20,18 @@ export const authReducer = (state = initialState, action) => {
                 errorMessage: false,
                 isConnected: true
             };
-        case 'SIGNUP_ERROR':
         case 'LOGIN_ERROR':
             return {
                 ...state,
                 errorMessage: true,
             };
+            case "SIGNOUT_SUCCESS" :
+                return {
+                    ...state,
+                    token: null,
+                    isConnected: false,
+                }
+        case 'SIGNUP_ERROR':
         default:
             return state;
     }
