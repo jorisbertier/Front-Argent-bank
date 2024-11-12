@@ -7,8 +7,9 @@ import AccountCard from '../../components/AccountCard.tsx';
 function Profile() {
 
   const userData = useSelector((state) => state.user.userData);
-  const token = useSelector((state) => state.auth.token);
-
+  // const token = useSelector((state) => state.auth.token);
+  let storage = localStorage.getItem("token");
+  console.log(storage)
   return (
       <main className="main bg-dark">
         <div className="header">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './App.css'
@@ -8,23 +8,39 @@ import SignIn from './pages/Login/SignIn.tsx';
 import NavBar from './components/NavBar.tsx';
 import Footer from './components/Footer.tsx';
 import Profile from './pages/Profile/Profile.tsx';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import store from './redux/store.js';
+import { loadUserFromStorage } from './redux/actions/token.actions.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Composant principal pour charger les informations utilisateur
+function App() {
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(loadUserFromStorage());
+  // }, [dispatch]);
+
+  return (
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+}
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <NavBar/>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        <Footer />
+        <App />
       </Router>
     </Provider>
   </React.StrictMode>
 );
-

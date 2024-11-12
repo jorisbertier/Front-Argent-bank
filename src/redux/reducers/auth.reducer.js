@@ -5,6 +5,7 @@ const initialState = {
     success: false,
     error: null,
     errorMessage: false,
+    isConnected: false
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -17,6 +18,7 @@ export const authReducer = (state = initialState, action) => {
                 error: null,
                 success: true,
                 errorMessage: false,
+                isConnected: true
             };
         case 'SIGNUP_ERROR':
         case 'LOGIN_ERROR':

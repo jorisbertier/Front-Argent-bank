@@ -10,6 +10,7 @@ export const fetchUserProfile = (token) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
+        localStorage.setItem("user", JSON.stringify(data))
         dispatch({ type: 'FETCH_PROFILE_SUCCESS', payload: data.body });
     } else {
         const errorData = await response.json();

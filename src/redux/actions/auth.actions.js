@@ -27,7 +27,9 @@ export const loginUser = (credentials) => async (dispatch) => {
             const { token, user } = data.body;
             
             dispatch({ type: 'LOGIN_SUCCESS', payload: { user, token } });
-            sessionStorage.setItem("token", token);
+            localStorage.setItem("token", token)
+            // localStorage.setItem("user", JSON.stringify(user))
+            // sessionStorage.setItem("token", token);
             dispatch(fetchUserProfile(token));
         } else {
             const errorData = await response.json();
