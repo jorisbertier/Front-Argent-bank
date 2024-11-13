@@ -4,6 +4,7 @@ import '../../App.css'
 import { useSelector } from 'react-redux';
 import AccountCard from '../../components/AccountCard.tsx';
 import { Link, useNavigate } from 'react-router-dom';
+import AccountCardData from '../../mock/AccountCardData.json'
 
 function Profile() {
 
@@ -11,17 +12,17 @@ function Profile() {
   const navigate = useNavigate();
 
   const userData = useSelector((state) => state.user.userData);
-  // const token = useSelector((state) => state.auth.token);
+    // const token = useSelector((state) => state.auth.token);
   let storage = localStorage.getItem("token");
-  console.log(userData)
-  console.log(typeof userData)
+
+  // // Convert the object to an array of values (which are the accounts)
+  const accountDataArray = Object.values(AccountCardData);
+
+  const filteredAccounts = accountDataArray.filter((account) => account.email === userData.email)
+  console.log(filteredAccounts)
   
 
-  // useEffect(() => {
-  //   if (isConnected === false) {
-  //     navigate('/signIn');
-  //   }
-  // }, [isConnected, navigate]);
+
   return (
       <main className="main bg-dark">
         <div className="header">
@@ -29,18 +30,9 @@ function Profile() {
           <Link className="edit-button" to='/editProfile'>Edit Name</Link>
         </div>
         <h2 className="sr-only">Accounts</h2>
-        <AccountCard
-          title={"Argent Bank Checking (x8349)"}
-          amount={'$2,082.79'}
-        />
-        <AccountCard
-          title={"Argent Bank Savings (x6712)"}
-          amount={'$10,928.42'}
-        />
-        <AccountCard
-          title={"Argent Bank Credit Card (x8349)"}
-          amount={'$2,082.79'}
-        />
+        {filteredAccounts.map((item, index) => (
+          <AccountCard key={index} title={item.title} amount={item.amount}/>
+        ))}
       </main>
   )
 }

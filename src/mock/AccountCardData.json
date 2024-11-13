@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "email": "tony@stark.com",
+        "title": "Argent Bank Checking (x8349)",
+        "amount": "$2,082.79"
+    },
+    {
+        "id": 2,
+        "email": "tony@stark.com",
+        "title": "Argent Bank Savings (x6712)",
+        "amount": "$10,928.42"
+    },
+    {
+        "id": 3,
+        "email": "tony@stark.com",
+        "title": "Argent Bank Credit Card (x8349)",
+        "amount": "$184.30"
+    },
+    {
+        "id": 4,
+        "email": "steve@rogers.com",
+        "title": "Argent Bank Checking (x8349)",
+        "amount": "$2,082.79"
+    },
+    {
+        "id": 5,
+        "email": "steve@rogers.com",
+        "title": "Argent Bank Checking (x8349)",
+        "amount": "$2,082.79"
+    },
+    {
+        "id": 6,
+        "email": "steve@rogers.com",
+        "title": "Argent Bank Checking (x8349)",
+        "amount": "$2,082.79"
+    }
+]
