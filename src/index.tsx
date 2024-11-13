@@ -11,6 +11,7 @@ import Profile from './pages/Profile/Profile.tsx';
 import { Provider, useDispatch } from 'react-redux';
 import store from './redux/store.js';
 import { loadUserFromStorage } from './redux/actions/token.actions.js';
+import EditProfile from './pages/EditProfile/EditProfile.tsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/editProfile" element={<EditProfile />} />
       </Routes>
       <Footer />
     </>

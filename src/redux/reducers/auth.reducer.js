@@ -10,7 +10,6 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'SIGNUP_SUCCESS':
         case 'LOGIN_SUCCESS':
             return {
                 ...state,
@@ -25,16 +24,12 @@ export const authReducer = (state = initialState, action) => {
                 ...state,
                 errorMessage: true,
             };
-            case "SIGNOUT_SUCCESS" :
-                return {
-                    ...state,
-                    token: null,
-                    isConnected: false,
-                    auth: {}
-                }
-        case 'SIGNUP_ERROR':
+        case "SIGNOUT_SUCCESS" :
             return {
-                ...state
+                ...state,
+                token: null,
+                isConnected: false,
+                auth: {}
             }
         default:
             return state;

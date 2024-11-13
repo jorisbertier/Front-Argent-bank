@@ -3,7 +3,7 @@ import '../../index.css';
 import '../../App.css'
 import { useSelector } from 'react-redux';
 import AccountCard from '../../components/AccountCard.tsx';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Profile() {
 
@@ -26,7 +26,7 @@ function Profile() {
       <main className="main bg-dark">
         <div className="header">
           <h1>Welcome back<br />{userData?.firstName} {userData?.lastName}!</h1>
-          <button className="edit-button">Edit Name</button>
+          <Link className="edit-button" to='/editProfile'>Edit Name</Link>
         </div>
         <h2 className="sr-only">Accounts</h2>
         <AccountCard
