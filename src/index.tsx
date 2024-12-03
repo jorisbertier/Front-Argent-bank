@@ -13,6 +13,7 @@ import store from './redux/store.js';
 import { loadUserFromStorage } from './redux/actions/token.actions.js';
 import EditProfile from './pages/EditProfile/EditProfile.tsx';
 import ProtectedRoute from './components/ProtectedRoute.tsx';
+import ErrorNotFound from './components/ErrorNotFound.tsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -46,6 +47,7 @@ function App() {
             </ProtectedRoute>
           }
           />
+          <Route path="*" element={<ErrorNotFound/>} />
       </Routes>
       <Footer />
     </>
