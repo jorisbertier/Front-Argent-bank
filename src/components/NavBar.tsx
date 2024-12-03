@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ArgentLogo from '../assets/images/argentBankLogo.png';
-import Account from '../assets/images/argentBankLogo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signOut } from '../redux/actions/signout.actions';
@@ -9,8 +8,8 @@ function NavBar() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isConnected = useSelector((state) => state.auth.isConnected);
-  const userData = useSelector((state) => state.user.userData)
+  const isConnected = useSelector((state: any) => state.auth.isConnected);
+  const userData = useSelector((state: any) => state.user.userData)
   console.log('page navbar', userData)
 
   useEffect(() => {

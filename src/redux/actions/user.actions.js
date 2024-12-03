@@ -17,8 +17,8 @@ export const fetchUserProfile = (token) => async (dispatch) => {
         dispatch({ type: 'FETCH_PROFILE_ERROR', payload: errorData.message });
     }
     } catch (error) {
-    dispatch({ type: 'FETCH_PROFILE_ERROR', payload: error.message });
-    console.error("Error during recuperation of profile:", error);
+        dispatch({ type: 'FETCH_PROFILE_ERROR', payload: error.message });
+        console.error("Error during getting of profile:", error);
     }
 };
 

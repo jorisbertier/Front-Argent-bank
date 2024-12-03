@@ -8,11 +8,10 @@ import AccountCardData from '../../mock/AccountCardData.json'
 
 function Profile() {
 
-  const isConnected = useSelector((state) => state.auth.isConnected);
+  const isConnected = useSelector((state: any) => state.auth.isConnected);
   const navigate = useNavigate();
 
-  const userData = useSelector((state) => state.user.userData);
-    // const token = useSelector((state) => state.auth.token);
+  const userData = useSelector((state: any) => state.user.userData);
   let storage = localStorage.getItem("token");
 
   // // Convert the object to an array of values (which are the accounts)
@@ -20,8 +19,6 @@ function Profile() {
 
   const filteredAccounts = accountDataArray.filter((account) => account.email === userData.email)
   console.log(filteredAccounts)
-  
-
 
   return (
       <main className="main bg-dark">
