@@ -22,6 +22,16 @@ body {
   background-color: #12002b;
 }
 
+.main-profile {
+  height: auto;
+  max-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #12002b;
+}
+
 /* .bg-dark {
   background-color: #12002b;
   height: 500px;
@@ -51,6 +61,7 @@ body {
 .main-nav a {
   font-weight: bold;
   color: #2c3e50;
+  margin-top: -2px;
 }
 
 .main-nav a.router-link-exact-active {
@@ -286,9 +297,15 @@ body {
 
 .main-nav-item-connected {
   display: flex;
+  flex-direction: row;
   gap: 20px;
 }
-
+.main-nav-item-not-connected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .main-nav-info {
   display: flex;
   align-items: center;

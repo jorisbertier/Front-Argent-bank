@@ -31,7 +31,6 @@ function NavBar() {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
-      <div>
         {isConnected ?
         <div className="main-nav-item-connected">
           <div className="main-nav-info">
@@ -41,12 +40,13 @@ function NavBar() {
           <button onClick={() => handleSignOut()}>Sign out</button>
         </div>
         :
-        <Link className="main-nav-item" to="/signIn">
+        <div className="main-nav-item-not-connected">
           <i className="fa fa-user-circle"></i>
-          Sign In
-        </Link>
+          <Link className="main-nav-item" to="/signIn">
+            Sign In
+          </Link>
+        </div>
         }
-      </div>
     </nav>
   )
 }
