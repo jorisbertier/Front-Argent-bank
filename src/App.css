@@ -14,13 +14,18 @@ body {
 }
 
 .main {
-  flex: 1;
+  height: 550px;
   max-height: 550px;
-}
-
-.bg-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #12002b;
 }
+
+/* .bg-dark {
+  background-color: #12002b;
+  height: 500px;
+} */
 
 .sr-only {
   border: 0 !important;
@@ -171,7 +176,6 @@ body {
   background-color: white;
   width: 300px;
   margin: 0 auto;
-  margin-top: 3rem;
   padding: 2rem;
 }
 
