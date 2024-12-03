@@ -21,14 +21,14 @@ function EditProfile() {
 
   }
   return (
-    <div>
-      <button onClick={() => navigate('/profile')}>Back to profile</button>
+    <div className='main-edit-profile'>
+      <button className='button-edit-profile' onClick={() => navigate('/profile')}>Back to profile</button>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <label>First name :</label><br></br>
+        <label style={{color: 'white'}}>First name :</label><br></br>
         <input type="text" defaultValue={userData.firstName} placeholder={userData.firstName} onChange={(e) => setFirstName(e.target.value)}/><br></br>
-        <label>Last name :</label><br></br>
+        <label style={{color: 'white'}}>Last name :</label><br></br>
         <input type="text" defaultValue={userData.lastName} placeholder={userData.lastName} onChange={(e) => setLastName(e.target.value)}/><br></br>
-        <button type="submit">Edit profile</button>
+        <button className='button-edit-profile' type="submit">Edit profile</button>
       </form>
     </div>
   )
