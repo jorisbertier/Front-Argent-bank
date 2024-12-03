@@ -16,10 +16,10 @@ function NavBar() {
     console.log("userData dans NavBar :", userData);
   }, [userData])
 
-  const handleLogout = () => {
-    dispatch(signOut(navigate));
-    
-  }
+  const handleSignOut = () => {
+    dispatch(signOut());
+    navigate('/signIn', { replace: true }); 
+  };
 
   return (
     <nav className="main-nav">
@@ -38,7 +38,7 @@ function NavBar() {
             <i className="fa fa-user-circle"></i>
             <h3>{userData.firstName}</h3>
           </div>
-          <button onClick={() => handleLogout()}>Sign out</button>
+          <button onClick={() => handleSignOut()}>Sign out</button>
         </div>
         :
         <Link className="main-nav-item" to="/signIn">

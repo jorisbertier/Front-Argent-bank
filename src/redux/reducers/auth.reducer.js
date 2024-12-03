@@ -29,6 +29,7 @@ export const authReducer = (state = initialState, action) => {
                 ...state,
                 token: null,
                 isConnected: false,
+                success: false,
                 auth: {}
             }
         default:

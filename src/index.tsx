@@ -12,10 +12,11 @@ import { Provider, useDispatch } from 'react-redux';
 import store from './redux/store.js';
 import { loadUserFromStorage } from './redux/actions/token.actions.js';
 import EditProfile from './pages/EditProfile/EditProfile.tsx';
+import ProtectedRoute from './components/ProtectedRoute.tsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Composant principal pour charger les informations utilisateur
+
 function App() {
   const dispatch = useDispatch();
 
@@ -29,13 +30,32 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/signIn" element={<SignIn />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/editProfile" element={<EditProfile />} />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+              </ProtectedRoute>
+            }
+          />
+        <Route
+          path="/editProfile"
+          element={
+            <ProtectedRoute>
+              <EditProfile />
+            </ProtectedRoute>
+          }
+          />
       </Routes>
       <Footer />
     </>
   );
 }
+
+// const Profile = () => {
+//   return <h2>Home (Protected: authenticated user required)</h2>;
+// };
+
 
 root.render(
   <React.StrictMode>
