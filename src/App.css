@@ -32,10 +32,18 @@ body {
   background-color: #12002b;
 }
 
-/* .bg-dark {
-  background-color: #12002b;
-  height: 500px;
-} */
+.main-nav-title {
+}
+
+.sign-out {
+  background-color: #00bc77;
+  height: 40px;
+  width: auto;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+}
 
 .sr-only {
   border: 0 !important;
@@ -291,6 +299,7 @@ body {
   background-color: #00bc77;
   color: #fff;
 }
+
 .error-message {
   color: red;
 }
@@ -298,19 +307,28 @@ body {
 .main-nav-item-connected {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
+
 .main-nav-item-not-connected {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
+
+.circle-connected {
+  margin-bottom: -4px;
+}
+
 .main-nav-info {
   display: flex;
   align-items: center;
   gap: 5px;
 }
+
 @media (min-width: 720px) {
   .account {
     flex-direction: row;

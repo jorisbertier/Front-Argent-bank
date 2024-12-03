@@ -34,10 +34,10 @@ function NavBar() {
         {isConnected ?
         <div className="main-nav-item-connected">
           <div className="main-nav-info">
-            <i className="fa fa-user-circle"></i>
-            <h3>{userData.firstName}</h3>
+            <i className="fa fa-user-circle circle-connected"></i>
+            <h3 className='main-nav-title'>{userData.firstName}</h3>
           </div>
-          <button onClick={() => handleSignOut()}>Sign out</button>
+          <button className='sign-out' onClick={() => handleSignOut()}>Sign out</button>
         </div>
         :
         <div className="main-nav-item-not-connected">
