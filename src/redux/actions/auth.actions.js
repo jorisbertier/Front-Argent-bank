@@ -30,7 +30,7 @@ export const loginUser = (credentials) => async (dispatch) => {
             localStorage.setItem("token", token)
             // localStorage.setItem("user", JSON.stringify(user))
             // sessionStorage.setItem("token", token);
-            dispatch(fetchUserProfile(token));
+            dispatch(fetchUserProfile());
         } else {
             const errorData = await response.json();
             dispatch({ type: 'LOGIN_ERROR', payload: errorData.message });

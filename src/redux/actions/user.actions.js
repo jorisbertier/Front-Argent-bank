@@ -1,6 +1,7 @@
-export const fetchUserProfile = (token) => async (dispatch) => {
+export const fetchUserProfile = () => async (dispatch) => {
     try {
-    const response = await fetch("http://localhost:3001/api/v1/user/profile", {
+        const token = localStorage.getItem('token');
+        const response = await fetch("http://localhost:3001/api/v1/user/profile", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
@@ -26,6 +27,9 @@ export const fetchUserProfile = (token) => async (dispatch) => {
 export const editUser = (firstName, lastName) => async (dispatch) => {
     try {
         const token = localStorage.getItem('token');
+        if(!token) {
+            return;
+        }
         const response = await fetch("http://localhost:3001/api/v1/user/profile", {
             method: 'PUT',
             headers: {

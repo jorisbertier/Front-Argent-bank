@@ -1,0 +1,40 @@
+swagger: '2.0'
+info:
+  title: Bank Argent API documentation
+  description: Contains all available API endpoints in this codebase
+  version: '1.0.0'
+  termsOfService: 'http://swagger.io/terms/'
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+  paths:
+  /user/{userId}/transactions:
+    get:
+      tags:
+        - Transaction Module
+      summary:  Transactions by user
+      description: API for getting all transactions associated by one user
+      security: 
+        - Bearer: []
+      parameters:
+        - in: path
+          name: userId
+          description: Id of the user
+          required: true
+          type: string
+      responses:
+        '200':
+          description: List of transactions Successfully retrieved
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/TransactionResponse'
+        '400':
+          description: Invalid Parameters
+        '401':
+          description: Unauthenticated user
+        '404':
+          description: User not found
+        '500':
+          description: Internal Server Error
