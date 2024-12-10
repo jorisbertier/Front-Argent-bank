@@ -67,3 +67,31 @@ paths:
           description: Transaction not found
         '500':
           description: Internal Server Error
+  /user/{userId}/transactions/add:
+    post:
+      tags:
+        - Add transaction Module
+      summary:  Add transaction
+      description: API for adding transaction associated by one user
+      security: 
+        - Bearer: []
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+      responses:
+        '200':
+          description: Transaction added Successfully
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/TransactionsResponse'
+        '400':
+          description: Invalid Fields
+        '401':
+          description: Unauthenticated user
+        '404':
+          description: User not found
+        '500':
+          description: Internal Server Error
