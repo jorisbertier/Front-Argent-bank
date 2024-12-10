@@ -8,7 +8,7 @@ host: localhost:3001
 basePath: /api/v1
 schemes:
   - http
-  paths:
+paths:
   /user/{userId}/transactions:
     get:
       tags:
@@ -36,5 +36,34 @@ schemes:
           description: Unauthenticated user
         '404':
           description: User not found
+        '500':
+          description: Internal Server Error
+  /transactions/{transactionId}:
+    get:
+      tags:
+        - Details transaction Module
+      summary:  Details of one transaction
+      description: API for getting details of one transactions associated by one user
+      security: 
+        - Bearer: []
+      parameters:
+        - in: path
+          name: transactionId
+          description: Id of the transaction
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Details of transactions Successfully retrieved
+          schema:
+            type: 'array'
+            items:
+              $ref: '#/definitions/TransactionDetailsResponse'
+        '400':
+          description: Invalid Parameters
+        '401':
+          description: Unauthenticated user
+        '404':
+          description: Transaction not found
         '500':
           description: Internal Server Error
