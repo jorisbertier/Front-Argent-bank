@@ -12,9 +12,9 @@ function NavBar() {
   const userData = useSelector((state: any) => state.user.userData)
   console.log('page navbar', userData)
 
-  useEffect(() => {
-    console.log("userData dans NavBar :", userData);
-  }, [userData])
+  // useEffect(() => {
+  //   console.log("userData dans NavBar :", userData);
+  // }, [userData])
 
   // useEffect(() => {
   //   if (!userData) {
@@ -38,15 +38,15 @@ function NavBar() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
         {isConnected ?
-        <Link className="main-nav-item" to="/profile">
           <div className="main-nav-item-connected">
-            <div className="main-nav-info">
-              <i className="fa fa-user-circle circle-connected"></i>
-              <h3 className='main-nav-title'>{userData.firstName}</h3>
-            </div>
+            <Link className="main-nav-item" to="/profile">
+              <div className="main-nav-info">
+                <i className="fa fa-user-circle circle-connected"></i>
+                <h3 className='main-nav-title'>{userData.firstName}</h3>
+              </div>
+          </Link>
             <button className='sign-out' onClick={() => handleSignOut()}>Sign out</button>
           </div>
-        </Link>
         :
         <div className="main-nav-item-not-connected">
           <i className="fa fa-user-circle"></i>
