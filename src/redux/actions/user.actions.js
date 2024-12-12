@@ -24,7 +24,7 @@ export const fetchUserProfile = () => async (dispatch) => {
 };
 
 
-export const editUser = (firstName, lastName) => async (dispatch) => {
+export const editUser = (firstName, lastName) => async (dispatch, getState) => {
     try {
         const token = localStorage.getItem('token');
         if(!token) {
@@ -42,9 +42,11 @@ export const editUser = (firstName, lastName) => async (dispatch) => {
         if (response.ok) {
             const data = await response.json();
             const { firstName: updatedFirstName, lastName: updatedLastName } = data.body;
+
+            const userData = getState().user.userData || {};
             dispatch({
                 type: 'EDIT_PROFILE_SUCCESS',
-                payload: { firstName: updatedFirstName, lastName: updatedLastName }
+                payload: {...userData, firstName: updatedFirstName, lastName: updatedLastName }
             });
 
             localStorage.setItem('user', JSON.stringify(data));

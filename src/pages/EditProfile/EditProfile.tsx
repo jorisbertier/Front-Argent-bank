@@ -17,7 +17,7 @@ function EditProfile() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(editUser(firstName, lastName))
+    dispatch(editUser(firstName, lastName, userData))
 
   }
   return (
