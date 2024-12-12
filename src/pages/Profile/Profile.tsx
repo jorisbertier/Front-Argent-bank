@@ -18,8 +18,6 @@ function Profile() {
   const accountDataArray = Object.values(AccountCardData);
 
   const filteredAccounts = accountDataArray.filter((account) => account.email === userData.email)
-  console.log(filteredAccounts)
-
   return (
       <main className="main-profile bg-dark">
         <div className="header">

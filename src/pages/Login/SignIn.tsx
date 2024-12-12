@@ -8,11 +8,10 @@ function SignIn() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { success, errorMessage, loading } = useSelector((state) => state.auth); 
+    const { success, errorMessage } = useSelector((state) => state.auth); 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    console.log(success)
     useEffect(() => {
         if (success) {
             navigate('/profile');

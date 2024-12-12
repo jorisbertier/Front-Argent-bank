@@ -10,17 +10,6 @@ function NavBar() {
   const navigate = useNavigate();
   const isConnected = useSelector((state: any) => state.auth.isConnected);
   const userData = useSelector((state: any) => state.user.userData)
-  console.log('page navbar', userData)
-
-  // useEffect(() => {
-  //   console.log("userData dans NavBar :", userData);
-  // }, [userData])
-
-  // useEffect(() => {
-  //   if (!userData) {
-  //     navigate('/signIn'); // Exemple : rediriger si userData est vide
-  //   }
-  // }, [userData, navigate]);
 
   const handleSignOut = () => {
     dispatch(signOut());
