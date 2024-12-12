@@ -3,8 +3,6 @@ import { fetchUserProfile } from "./user.actions";
 export const loadUserFromStorage = () => (dispatch) => {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    
-    console.log('user', user)
 
     if (token && user) {
         try {

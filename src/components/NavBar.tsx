@@ -38,13 +38,15 @@ function NavBar() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
         {isConnected ?
-        <div className="main-nav-item-connected">
-          <div className="main-nav-info">
-            <i className="fa fa-user-circle circle-connected"></i>
-            <h3 className='main-nav-title'>{userData.firstName}</h3>
+        <Link className="main-nav-item" to="/profile">
+          <div className="main-nav-item-connected">
+            <div className="main-nav-info">
+              <i className="fa fa-user-circle circle-connected"></i>
+              <h3 className='main-nav-title'>{userData.firstName}</h3>
+            </div>
+            <button className='sign-out' onClick={() => handleSignOut()}>Sign out</button>
           </div>
-          <button className='sign-out' onClick={() => handleSignOut()}>Sign out</button>
-        </div>
+        </Link>
         :
         <div className="main-nav-item-not-connected">
           <i className="fa fa-user-circle"></i>
