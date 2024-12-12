@@ -12,9 +12,6 @@ function EditProfile() {
   const [lastName, setLastName] = useState(userData.lastName || '');
   const dispatch = useDispatch();
 
-  console.log(lastName)
-  console.log(firstName)
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     dispatch(editUser(firstName, lastName, userData))

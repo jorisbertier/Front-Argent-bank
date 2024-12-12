@@ -16,6 +16,12 @@ function NavBar() {
     console.log("userData dans NavBar :", userData);
   }, [userData])
 
+  // useEffect(() => {
+  //   if (!userData) {
+  //     navigate('/signIn'); // Exemple : rediriger si userData est vide
+  //   }
+  // }, [userData, navigate]);
+
   const handleSignOut = () => {
     dispatch(signOut());
     navigate('/signIn', { replace: true }); 
