@@ -4,8 +4,8 @@ export const fetchUserProfile = () => async (dispatch) => {
         const response = await fetch("http://localhost:3001/api/v1/user/profile", {
         method: "POST",
         headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
         },
     });
 

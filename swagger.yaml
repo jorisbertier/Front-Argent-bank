@@ -56,8 +56,6 @@ paths:
         '200':
           description: resource retrieved Successfully
           schema:
-            type: 'array'
-            items:
               $ref: '#/definitions/TransactionDetailsResponse'
         '400':
           description: Invalid Parameters
@@ -84,8 +82,6 @@ paths:
         '200':
           description: Resource updated successfully
           schema:
-            type: array
-            items:
               $ref: '#/definitions/TransactionDetailsResponse'
         '400':
           description: Invalid Parameters
@@ -154,6 +150,22 @@ securityDefinitions:
     in: header
 definitions:
   TransactionDetailsResponse:
+    type: object
+    properties:
+      id:
+        type: number
+        description: Unique identifier for the transaction
+      email:
+        type: string
+        description: Email of the user associated with the transaction
+      title:
+        type: string
+        description: Title or description of the transaction
+      amount:
+        type: string
+        description: Amount of the transaction, formatted as a string (e.g., "$2,082.79")
+
+  TransactionResponse:
     type: object
     properties:
       id:

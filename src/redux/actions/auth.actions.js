@@ -3,7 +3,7 @@ import { fetchUserProfile } from './user.actions';
 export const loginUser = (credentials) => async (dispatch) => {
     try {
         const response = await fetch("http://localhost:3001/api/v1/user/login", {
-            method: "POST",
+            method: "POST", //REquest HTTP  GET PUT POST DELETE OPTIONS 
             headers: {
                 "Content-Type": "application/json",
             },
